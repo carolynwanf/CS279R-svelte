@@ -9,6 +9,8 @@
 ....or visit this handy dandy link! 
 https://cs279r-svelte.web.app/
 
+(I'm not sure why it says undefined on the web but not locally, am troubleshooting)
+
 ## Citations
 This tutorial: https://fireship.io/lessons/svelte-v3-overview-firebase/
 and the firestore documentation: https://firebase.google.com/docs/firestore/
