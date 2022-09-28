@@ -8,9 +8,6 @@
 </svelte:head>
 
 <style>
-	h1 {
-	  color: purple;
-	}
 	main {
 	  margin: 20px;
 	}

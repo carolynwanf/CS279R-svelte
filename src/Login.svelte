@@ -9,10 +9,17 @@
 
     let user;
 
-    // const unsubscribe = authState(auth).subscribe(u => user = u);
+    const unsubscribe = authState(auth).subscribe(u => user = u);
 
     function login() {
-        signInWithPopup(auth, googleProvider);
+        signInWithPopup(auth, googleProvider).then((result) => {
+            console.log(result.user)
+            // The signed-in user info.
+            user = result.user;
+        }).catch((error) => {
+            // Handle Errors here.
+            console.log("error", error)
+        });
     }
 </script>
 
@@ -25,11 +32,12 @@
 </style>
 
 <section>
-{#if $user}
-    <Profile {...$user} />
+{#if user}
+    {console.log(user)}
+    <Profile {...user} />
     <button on:click={ () => auth.signOut() } class="button">Logout</button>
     <hr>
-    <Todos uid={$user.uid} />
+    <Todos uid={user.uid} />
 {:else}
 	<button on:click={login} class="button">
 		Signin with Google

@@ -1,4 +1,5 @@
 <script>
+    import { fade, fly } from 'svelte/transition';
     import { createEventDispatcher } from 'svelte';
 
     // Emits events back up to the parent
@@ -18,10 +19,11 @@
         });
     }
     
-
     export let id; // document ID
     export let text;
     export let complete;
+
+    console.log(id, text, complete)
 </script>
 
 <style>
@@ -29,19 +31,39 @@
         text-decoration: line-through;
         color: green;
     }
+
+    li {
+        display: flex;
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
+    span {
+        margin-right: auto;
+    }
 </style>
 
 
-<li>
+<li in:fly="{{ x: 900, duration: 500 }}" out:fade>
 
 {#if complete}
-    <span class="is-complete">{ text }</span>
-    <button on:click={toggleStatus}> ✔️ </button>
+    <span class="is-complete">
+        { text }
+    </span>
+	<button class="is-button" on:click={toggleStatus}>
+		✔️
+	</button>
 {:else}
-    <span>{ text }</span>
-    <button on:click={toggleStatus}> ❌ </button>
+    <span>
+        { text }
+    </span>
+	<button class="is-button" on:click={toggleStatus}>
+		❌
+	</button>
 {/if}
 
-<button on:click={remove}> 🗑 </button>
+<button class="is-button" on:click={remove}>
+    🗑️
+</button>
 
 </li>
