@@ -1,4 +1,6 @@
+<!-- The Profile component!! Used for rendering some fun information about the user -->
 <script>
+    // Defining the props to be used
     export let displayName;
     export let photoURL;
     export let uid;

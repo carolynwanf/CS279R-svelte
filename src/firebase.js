@@ -15,7 +15,7 @@ const firebaseConfig = {
 
 // Initializing a firebase app using my credentials
 const app = firebase.initializeApp(firebaseConfig);
-console.log("first", getFirestore(app));
+
 // Exporting authentication and the database for use in other files
 export const auth = getAuth();
 export const googleProvider = new GoogleAuthProvider();

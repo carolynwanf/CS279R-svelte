@@ -13,6 +13,7 @@
 	}
 </style>
 
+<!-- Main content -->
 <main class="content">
 
 	<h1>Welcome to {name}</h1>

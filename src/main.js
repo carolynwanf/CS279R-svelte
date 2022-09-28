@@ -1,5 +1,6 @@
 import App from "./App.svelte";
 
+// The root of the dependency tree :)
 const app = new App({
   target: document.body,
   props: {
@@ -7,4 +8,5 @@ const app = new App({
   },
 });
 
+// Exporting app to used for rendering
 export default app;
